@@ -1,0 +1,16 @@
+# Maven target folder
+/target/
+
+# NetBeans specific files
+/nbproject/private/
+/nbbuild/
+/dist/
+/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files (opcional)
+/.vscode/
+/.idea/
