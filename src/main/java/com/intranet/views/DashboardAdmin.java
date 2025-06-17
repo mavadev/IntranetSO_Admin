@@ -22,8 +22,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
         JMenuItem opcionCurso = new JMenuItem("Curso");
         
         // Añadir acciones (sintaxis correcta)
-        opcionDocente.addActionListener(e -> new DocenteFrame().setVisible(true));
-        opcionEstudiante.addActionListener(e -> new EstudianteFrame().setVisible(true));
         opcionCurso.addActionListener(e -> {
             this.setVisible(false);
             new RegistroCurso().setVisible(true);
