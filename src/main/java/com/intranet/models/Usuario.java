@@ -1,4 +1,4 @@
-package com.intranet.models;
+ package com.intranet.models;
 
 import java.time.LocalDateTime;
 
