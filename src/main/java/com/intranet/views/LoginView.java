@@ -183,9 +183,10 @@ public class LoginView extends javax.swing.JFrame {
         // En caso encuentre el usuario
         if(usuario != null){
             AlertUtils.showSuccess("Bienvenido "+usuario.getNombre()+"!");
-
-            this.setVisible(false);
-        }
+        
+        new DashboardAdmin().setVisible(true);
+        this.setVisible(false);
+    } 
         // Si no encuentra el usuario
         else {
             AlertUtils.showMessage("Credenciales incorrectas");
