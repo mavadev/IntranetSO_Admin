@@ -27,102 +27,311 @@ public class ListadoCursos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        nombcurso2 = new javax.swing.JLabel();
+        grado2 = new javax.swing.JLabel();
+        descripcurso2 = new javax.swing.JLabel();
+        comboprofe2 = new javax.swing.JComboBox<>();
+        eliminarcurso2 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        nombcurso3 = new javax.swing.JLabel();
+        grado3 = new javax.swing.JLabel();
+        descripcurso3 = new javax.swing.JLabel();
+        comboprofe3 = new javax.swing.JComboBox<>();
+        Eliminarcurso3 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        nombcurso4 = new javax.swing.JLabel();
+        grado4 = new javax.swing.JLabel();
+        descripcurso4 = new javax.swing.JLabel();
+        comboprofe4 = new javax.swing.JComboBox<>();
+        eliminarcurso4 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        nombcurso1 = new javax.swing.JLabel();
+        grado1 = new javax.swing.JLabel();
+        descripcurso1 = new javax.swing.JLabel();
+        comboprofe1 = new javax.swing.JComboBox<>();
+        eliminarcurso1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(860, 620));
+        jPanel1.setVerifyInputWhenFocusTarget(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Eliminar");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 212, 720));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel13.setText("Nombre del curso");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jButton3.setText("Crear Curso");
-        jButton3.setBorder(null);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel14.setText("Descripción");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("Listado de Cursos");
-        jButton2.setBorder(null);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel15.setText("Eliminar");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, -1, -1));
 
-        jLabel1.setText("Nombre del curso");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel16.setText("Nombre del docente");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
-        jLabel2.setText("Descripción");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, -1, -1));
-
-        jLabel3.setText("Docente");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, -1, -1));
-
-        jLabel4.setText("Eliminar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 120, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aulaprofesor.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, -1, -1));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aulaprofesor.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
+
+        nombcurso2.setText("Historia del Perú");
+
+        grado2.setText("1er grado");
+
+        descripcurso2.setText("Este curso esta creado para todos los estudiantes de");
+
+        comboprofe2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abraham Navarrete", "Meredith Gray", "Cristina Yang", "Derek Sheper" }));
+        comboprofe2.setToolTipText("");
+
+        eliminarcurso2.setBackground(new java.awt.Color(113, 0, 4));
+        eliminarcurso2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/basura.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(nombcurso2)
+                        .addGap(50, 50, 50)
+                        .addComponent(descripcurso2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(comboprofe2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(grado2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(eliminarcurso2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(eliminarcurso2)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nombcurso2)
+                                .addComponent(descripcurso2)
+                                .addComponent(comboprofe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(1, 1, 1)
+                            .addComponent(grado2))))
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 810, -1));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aulaprofesor.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+
+        nombcurso3.setText("Historia del Perú");
+
+        grado3.setText("1er grado");
+
+        descripcurso3.setText("Este curso esta creado para todos los estudiantes de");
+
+        comboprofe3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abraham Navarrete", "Meredith Gray", "Cristina Yang", "Derek Sheper" }));
+        comboprofe3.setToolTipText("");
+
+        Eliminarcurso3.setBackground(new java.awt.Color(113, 0, 4));
+        Eliminarcurso3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/basura.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(nombcurso3)
+                        .addGap(50, 50, 50)
+                        .addComponent(descripcurso3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(comboprofe3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(grado3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(Eliminarcurso3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Eliminarcurso3)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nombcurso3)
+                                .addComponent(descripcurso3)
+                                .addComponent(comboprofe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(1, 1, 1)
+                            .addComponent(grado3))))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 810, -1));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aulaprofesor.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, -1, -1));
+
+        nombcurso4.setText("Historia del Perú");
+
+        grado4.setText("1er grado");
+
+        descripcurso4.setText("Este curso esta creado para todos los estudiantes de");
+
+        comboprofe4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abraham Navarrete", "Meredith Gray", "Cristina Yang", "Derek Sheper" }));
+        comboprofe4.setToolTipText("");
+
+        eliminarcurso4.setBackground(new java.awt.Color(113, 0, 4));
+        eliminarcurso4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/basura.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(nombcurso4)
+                        .addGap(50, 50, 50)
+                        .addComponent(descripcurso4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(comboprofe4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(grado4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(eliminarcurso4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(eliminarcurso4)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nombcurso4)
+                                .addComponent(descripcurso4)
+                                .addComponent(comboprofe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(1, 1, 1)
+                            .addComponent(grado4))))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 810, -1));
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aulaprofesor.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
 
-        jLabel10.setText("Historia del Perú");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
+        nombcurso1.setText("Historia del Perú");
 
-        jLabel11.setText("1er grado");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
+        grado1.setText("1er grado");
 
-        jLabel12.setText("Este curso esta creado para todos los estudiantes de");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 170, -1));
+        descripcurso1.setText("Este curso esta creado para todos los estudiantes de");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, -1, -1));
+        comboprofe1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abraham Navarrete", "Meredith Gray", "Cristina Yang", "Derek Sheper" }));
+        comboprofe1.setToolTipText("");
+
+        eliminarcurso1.setBackground(new java.awt.Color(113, 0, 4));
+        eliminarcurso1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/basura.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(nombcurso1)
+                        .addGap(50, 50, 50)
+                        .addComponent(descripcurso1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(comboprofe1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(grado1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(eliminarcurso1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(eliminarcurso1)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nombcurso1)
+                                .addComponent(descripcurso1)
+                                .addComponent(comboprofe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(1, 1, 1)
+                            .addComponent(grado1))))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 810, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1094, 728);
+        setBounds(0, 0, 874, 648);
     }// </editor-fold>//GEN-END:initComponents
+
+    
+
 
     /**
      * @param args the command line arguments
@@ -160,22 +369,39 @@ public class ListadoCursos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton Eliminarcurso3;
+    private javax.swing.JComboBox<String> comboprofe1;
+    private javax.swing.JComboBox<String> comboprofe2;
+    private javax.swing.JComboBox<String> comboprofe3;
+    private javax.swing.JComboBox<String> comboprofe4;
+    private javax.swing.JLabel descripcurso1;
+    private javax.swing.JLabel descripcurso2;
+    private javax.swing.JLabel descripcurso3;
+    private javax.swing.JLabel descripcurso4;
+    private javax.swing.JButton eliminarcurso1;
+    private javax.swing.JButton eliminarcurso2;
+    private javax.swing.JButton eliminarcurso4;
+    private javax.swing.JLabel grado1;
+    private javax.swing.JLabel grado2;
+    private javax.swing.JLabel grado3;
+    private javax.swing.JLabel grado4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel nombcurso1;
+    private javax.swing.JLabel nombcurso2;
+    private javax.swing.JLabel nombcurso3;
+    private javax.swing.JLabel nombcurso4;
     // End of variables declaration//GEN-END:variables
 }

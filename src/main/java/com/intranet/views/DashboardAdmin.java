@@ -500,7 +500,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(1094, 728));
+        setSize(new java.awt.Dimension(1094, 747));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

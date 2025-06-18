@@ -2,19 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 package com.intranet.views;
 
-/**
- *
- * @author narni
- */
+import java.awt.BorderLayout;
+
+
 public class RegistroCurso extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CursoFrame
-     */
     public RegistroCurso() {
         initComponents();
+        
+        
     }
 
     /**
@@ -28,24 +27,8 @@ public class RegistroCurso extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btncrearcurso = new javax.swing.JButton();
+        btnlistadecursos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,110 +39,63 @@ public class RegistroCurso extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 212, 720));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 270, 230, 30));
-
-        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 230, 30));
-
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTextField2.setText("                   Datos del curso");
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 210, 30));
-
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        btncrearcurso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btncrearcurso.setText("Crear curso");
+        btncrearcurso.setBorder(null);
+        btncrearcurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                btncrearcursoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 490, 100));
+        jPanel1.add(btncrearcurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
 
-        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        btnlistadecursos.setText("Listado de Cursos");
+        btnlistadecursos.setBorder(null);
+        btnlistadecursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                btnlistadecursosActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 200, 230, 30));
-
-        jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 230, 30));
-
-        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 200, 130));
-
-        jTextField10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 390, 60, 60));
-
-        jTextField13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 390, 60, 60));
-
-        jTextField12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 390, 60, 60));
-
-        jLabel1.setText("Nombre del curso");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
-
-        jLabel2.setText("Grado");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, -1));
-
-        jLabel3.setText("Docente");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
-
-        jLabel4.setText("Sede de institución");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, -1, -1));
-
-        jButton1.setBackground(new java.awt.Color(180, 0, 35));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registrar Curso");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 200, 50));
-
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 110, 800, 520));
-
-        jButton2.setText("Listado de Cursos");
-        jButton2.setBorder(null);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
-
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setText("Crear Curso");
-        jButton3.setBorder(null);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
+        jPanel1.add(btnlistadecursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 1094, 728);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void btnlistadecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistadecursosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+      
+    }
+        {
+    }//GEN-LAST:event_btnlistadecursosActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    private void btncrearcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearcursoActionPerformed
+        // TODO add your handling coRegistroCursoPanel RegistroC = new RegistroCursoPanel();
+              
+      
+    }//GEN-LAST:event_btncrearcursoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,25 +134,9 @@ public class RegistroCurso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btncrearcurso;
+    private javax.swing.JButton btnlistadecursos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }
