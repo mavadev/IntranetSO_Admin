@@ -4,71 +4,69 @@ import java.time.LocalDateTime;
 
 public class Usuario {
     private int id;
-    private String nombre, apellido, correo, contraseña, rol;
-    private LocalDateTime creado_en;
+    private String email, password, rol;
+    private String estado;
 
+    public Usuario() {
+    }
+    
     // CONSTRUCTOR CON ID (Mostrar)
-    public Usuario(int id, String nombre, String apellido, String correo, String contraseña, String rol, LocalDateTime creado_en) {
+    public Usuario(int id, String correo, String contraseña, String rol, String estado) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.contraseña = contraseña;
+        this.email = correo;
+        this.password = contraseña;
         this.rol = rol;
-        this.creado_en = creado_en;
+        this.estado = estado;
     }
     
     // CONSTRUCTOR SIN ID (Creación)
-    public Usuario(String nombre, String apellido, String correo, String contraseña, String rol) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.contraseña = contraseña;
+    public Usuario(String correo, String contraseña, String rol, String estado) {
+        this.email = correo;
+        this.password = contraseña;
         this.rol = rol;
+        this.estado = estado;
     }
     
     // GETTERS Y SETTERS
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-    public String getNombre() {
-        return nombre;
+
+    public String getEmail() {
+        return email;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public void setEmail(String email) {
+        this.email = email;
     }
-    public String getApellido() {
-        return apellido;
+
+    public String getPassword() {
+        return password;
     }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public String getCorreo() {
-        return correo;
-    }
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-    public String getContraseña() {
-        return contraseña;
-    }
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
+
     public String getRol() {
         return rol;
     }
+
     public void setRol(String rol) {
         this.rol = rol;
     }
-    public LocalDateTime getCreado_en() {
-        return creado_en;
-    }
-    public void setCreado_en(LocalDateTime creado_en) {
-        this.creado_en = creado_en;
+
+    public String isEstado() {
+        return estado;
     }
 
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
 }

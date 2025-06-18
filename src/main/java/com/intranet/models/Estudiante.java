@@ -1,36 +1,49 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.intranet.models;
-
-import java.sql.Time;
 import java.time.LocalDate;
 
-public class Estudiante {
+public class Estudiante extends Usuario {
     
     //Estudiante
-    private int grado;
-    private String nombEstu,dniEstu,correoEstu,celEstu,fijoEstu,departamentoEstu,provinciaEstu,distritoEstu,direccionEstu,nomApode,celApode,dniApode;
-    private Time fechaEstu;
+    private int id, grado, seccion;
+    private String nombre,apellido, dni, direccion;
+    private LocalDate fechaNacimiento;
 
-    public Estudiante(int grado, String nombEstu, String dniEstu, String correoEstu, String celEstu, String fijoEstu, String departamentoEstu, String provinciaEstu, String distritoEstu, String direccionEstu, String nomApode, String celApode, Time fechaEstu, String dniApode) {
+    public Estudiante(int id, String nombre, String apellido, LocalDate fechaNacimiento, String dni, String direccion, int grado, int seccion ) {
+        this.id = id;
         this.grado = grado;
-        this.nombEstu = nombEstu;
-        this.dniEstu = dniEstu;
-        this.correoEstu = correoEstu;
-        this.celEstu = celEstu;
-        this.fijoEstu = fijoEstu;
-        this.departamentoEstu = departamentoEstu;
-        this.provinciaEstu = provinciaEstu;
-        this.distritoEstu = distritoEstu;
-        this.direccionEstu = direccionEstu;
-        this.nomApode = nomApode;
-        this.celApode = celApode;
-        this.fechaEstu = fechaEstu;
-        this.dniApode=dniApode;
+        this.seccion = seccion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.direccion = direccion;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+    
+    public Estudiante(String nombre, String apellido, LocalDate fechaNacimiento, String dni, String direccion, int grado, int seccion ) {
+        this.grado = grado;
+        this.seccion = seccion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.direccion = direccion;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
+    public Estudiante(String correo, String contraseña, String nombre, String apellido, LocalDate fechaNacimiento, String dni, String direccion, int grado, int seccion) {
+        super(correo, contraseña, "estudiante", "activo");
+        this.grado = grado;
+        this.seccion = seccion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.direccion = direccion;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public int getId(){
+        return id;
+    }
+    
     public int getGrado() {
         return grado;
     }
@@ -39,109 +52,53 @@ public class Estudiante {
         this.grado = grado;
     }
 
-    public String getNombEstu() {
-        return nombEstu;
+    public int getSeccion() {
+        return seccion;
     }
 
-    public void setNombEstu(String nombEstu) {
-        this.nombEstu = nombEstu;
+    public void setSeccion(int seccion) {
+        this.seccion = seccion;
     }
 
-    public String getDniEstu() {
-        return dniEstu;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDniEstu(String dniEstu) {
-        this.dniEstu = dniEstu;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getCorreoEstu() {
-        return correoEstu;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setCorreoEstu(String correoEstu) {
-        this.correoEstu = correoEstu;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getCelEstu() {
-        return celEstu;
+    public String getDni() {
+        return dni;
     }
 
-    public void setCelEstu(String celEstu) {
-        this.celEstu = celEstu;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public String getFijoEstu() {
-        return fijoEstu;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setFijoEstu(String fijoEstu) {
-        this.fijoEstu = fijoEstu;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getDepartamentoEstu() {
-        return departamentoEstu;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setDepartamentoEstu(String departamentoEstu) {
-        this.departamentoEstu = departamentoEstu;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
-
-    public String getProvinciaEstu() {
-        return provinciaEstu;
-    }
-
-    public void setProvinciaEstu(String provinciaEstu) {
-        this.provinciaEstu = provinciaEstu;
-    }
-
-    public String getDistritoEstu() {
-        return distritoEstu;
-    }
-
-    public void setDistritoEstu(String distritoEstu) {
-        this.distritoEstu = distritoEstu;
-    }
-
-    public String getDireccionEstu() {
-        return direccionEstu;
-    }
-
-    public void setDireccionEstu(String direccionEstu) {
-        this.direccionEstu = direccionEstu;
-    }
-
-    public String getNomApode() {
-        return nomApode;
-    }
-
-    public void setNomApode(String nomApode) {
-        this.nomApode = nomApode;
-    }
-
-    public String getCelApode() {
-        return celApode;
-    }
-
-    public void setCelApode(String celApode) {
-        this.celApode = celApode;
-    }
-
-    public Time getFechaEstu() {
-        return fechaEstu;
-    }
-
-    public void setFechaEstu(Time fechaEstu) {
-        this.fechaEstu = fechaEstu;
-    }
-    public String getdniApode(){
-        return dniApode;
-        
-    }
-    public void setdniApode (String dniApode){
-        this.dniApode= dniApode;
-    }
-
-     
+    
     
 }

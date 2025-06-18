@@ -26,7 +26,7 @@ public class Sidebar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        sidebar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -35,87 +35,86 @@ public class Sidebar extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(220, 720));
 
-        jPanel1.setBackground(new java.awt.Color(5, 51, 74));
-        jPanel1.setPreferredSize(new java.awt.Dimension(220, 720));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        sidebar.setBackground(new java.awt.Color(5, 51, 74));
+        sidebar.setPreferredSize(new java.awt.Dimension(220, 720));
+        sidebar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO.DESKTOP-SFNU4NH\\Downloads\\image 8 (1).png")); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 120, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_logo.png"))); // NOI18N
+        sidebar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 120, -1));
 
         jButton2.setBackground(new java.awt.Color(5, 51, 74));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO.DESKTOP-SFNU4NH\\Downloads\\Vector (8).png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_logout.png"))); // NOI18N
         jButton2.setText("Cerrar Sesión");
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(5, 51, 74)));
         jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton2.setIconTextGap(10);
         jButton2.setOpaque(true);
         jButton2.setPreferredSize(new java.awt.Dimension(220, 50));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, -1, -1));
+        sidebar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, -1, -1));
 
         jButton6.setBackground(new java.awt.Color(5, 51, 74));
         jButton6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO.DESKTOP-SFNU4NH\\Downloads\\Vector (1).png")); // NOI18N
-        jButton6.setText("Principlal");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_home.png"))); // NOI18N
+        jButton6.setText("Principal");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(5, 51, 74)));
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton6.setIconTextGap(10);
         jButton6.setOpaque(true);
         jButton6.setPreferredSize(new java.awt.Dimension(220, 50));
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        sidebar.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
         jButton7.setBackground(new java.awt.Color(5, 51, 74));
         jButton7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO.DESKTOP-SFNU4NH\\Downloads\\Vector (9).png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_user.png"))); // NOI18N
         jButton7.setText("Estudiantes");
         jButton7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(5, 51, 74)));
         jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton7.setIconTextGap(10);
         jButton7.setOpaque(true);
         jButton7.setPreferredSize(new java.awt.Dimension(220, 50));
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
+        sidebar.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
 
         jButton8.setBackground(new java.awt.Color(5, 51, 74));
         jButton8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO.DESKTOP-SFNU4NH\\Downloads\\Vector (9).png")); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_user.png"))); // NOI18N
         jButton8.setText("Docentes");
         jButton8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(5, 51, 74)));
         jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton8.setIconTextGap(10);
         jButton8.setOpaque(true);
         jButton8.setPreferredSize(new java.awt.Dimension(220, 50));
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, -1, -1));
+        sidebar.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         jButton9.setBackground(new java.awt.Color(5, 51, 74));
         jButton9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO.DESKTOP-SFNU4NH\\Downloads\\Vector (7).png")); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_courses.png"))); // NOI18N
         jButton9.setText("Cursos");
         jButton9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(5, 51, 74)));
         jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton9.setIconTextGap(10);
         jButton9.setOpaque(true);
         jButton9.setPreferredSize(new java.awt.Dimension(220, 50));
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, -1));
+        sidebar.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -164,6 +163,6 @@ public class Sidebar extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel sidebar;
     // End of variables declaration//GEN-END:variables
 }

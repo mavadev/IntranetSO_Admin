@@ -1,5 +1,6 @@
 package com.intranet.db;
 
+import com.intranet.utils.AlertUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,6 +19,7 @@ public class DBConnection {
             connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
         } catch(SQLException exception){
             System.out.println("Error al conectar: " + exception.getMessage());
+            AlertUtils.showMessage("No se pudo conectar a la DB");
         }
     }
     
@@ -39,6 +41,7 @@ public class DBConnection {
             if (connection != null) connection.close();
         } catch (SQLException exception) {
             System.out.println("Error al cerrar la conexion: " + exception.getMessage());
+            AlertUtils.showMessage("No se pudo cerrar a la DB");
         }
     }
 }

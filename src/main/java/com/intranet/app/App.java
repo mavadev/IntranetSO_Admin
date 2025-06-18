@@ -1,13 +1,13 @@
 package com.intranet.app;
 
 import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
-import com.intranet.views.LoginView;
+import com.intranet.views.Login;
 
 public class App {
     public static void main(String[] args) {
         FlatArcOrangeIJTheme.setup();
         
         AppContext.initialize();
-        new LoginView().setVisible(true);
+        new Login().setVisible(true);
     }
 }

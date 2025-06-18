@@ -14,31 +14,4 @@ public class UsuarioController {
     public UsuarioController(DBConnection db) {
         this.conn = db.getConexion();
     }
-    
-    public Usuario login(String correo, String contraseña) {
-        String sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
-        
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, correo);
-            stmt.setString(2, contraseña);
-            ResultSet rs = stmt.executeQuery();
-            
-            if (rs.next()) {
-                return new Usuario(
-                    rs.getInt("id"),
-                    rs.getString("nombre"),
-                    rs.getString("apellido"),
-                    rs.getString("correo"),
-                    rs.getString("contraseña"),
-                    rs.getString("rol"),
-                    rs.getTimestamp("creado_en").toLocalDateTime()
-                );
-            }
-            
-        } catch (SQLException e) {
-            System.out.println("Error al hacer login: " + e.getMessage());
-            AlertUtils.showWarning("Hubo un error al crear el usuario");
-        }
-        return null;
-    }
 }
