@@ -21,10 +21,10 @@ public class DocenteController {
     public DocenteController(DBConnection db) {
         this.conn = db.getConexion();
     }
-    
-      public boolean registerTeachers(Docente docente) {
+      
+    public boolean registerTeachers(Docente docente) {
         String sql = "INSERT INTO usuarios (nombreDocente, fechaDocente, dniDocente, correoDocente, celularDocente , departamentoDocente,provinciaDocente,distritoDocente ,ocupacion) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, docente.getNombDoc());
             stmt.setTime(2, docente.getFechaDoc());

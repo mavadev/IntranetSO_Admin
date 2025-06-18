@@ -8,8 +8,10 @@ import com.intranet.app.AppContext;
 import com.intranet.models.Usuario;
 import com.intranet.utils.AlertUtils;
 import com.intranet.utils.Validador;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class LoginView extends javax.swing.JFrame {
+public class LoginView extends JFrame {
 
     public LoginView() {
         initComponents();
@@ -40,7 +42,7 @@ public class LoginView extends javax.swing.JFrame {
         setTitle("Autenticación de Usuario");
         setPreferredSize(new java.awt.Dimension(100, 100));
 
-        background.setLayout(new java.awt.GridLayout());
+        background.setLayout(new java.awt.GridLayout(1, 0));
 
         title.setLayout(new java.awt.BorderLayout(0, 10));
 
@@ -127,7 +129,7 @@ public class LoginView extends javax.swing.JFrame {
             .addGroup(imgLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jLabel1)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         imgLayout.setVerticalGroup(
             imgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
