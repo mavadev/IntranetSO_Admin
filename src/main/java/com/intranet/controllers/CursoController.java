@@ -17,10 +17,25 @@ public class CursoController {
     }
     
     public boolean registerCurso(Curso curso) {
+        String queryExiste = "SELECT * FROM Curso WHERE nombre = ? AND grado_id = ?";
+        
+        try (PreparedStatement sttm = conn.prepareStatement(queryExiste)) {
+            sttm.setString(1, curso.getNombre());
+            sttm.setInt(2, curso.getGradoId());
+            ResultSet rs = sttm.executeQuery();
+            
+            if (rs.next()) {
+                AlertUtils.showWarning("Ya existe un curso registrado en el grado");
+                return false;
+            } 
+        } catch (SQLException e) {
+            System.out.println("Error al obtener el curso: " + e.getMessage());
+            AlertUtils.showWarning("Hubo un error al obtener el curso");
+            return false;
+        }
+        
         String queryCurso = "INSERT INTO Curso (nombre, descripcion, docente_id, grado_id) VALUES (?, ?, ?, ?)";
 
-        System.out.print(curso.getNombre()+ " - "+ curso.getDescripcion() + " - "+  curso.getDocenteId() + " - "+curso.getGradoId());
-        
         try (PreparedStatement stmt = conn.prepareStatement(queryCurso)) {
             stmt.setString(1, curso.getNombre());
             stmt.setString(2, curso.getDescripcion());
