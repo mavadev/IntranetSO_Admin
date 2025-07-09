@@ -1,57 +1,85 @@
 package com.intranet.models;
 
 public class Curso {
-    private int id, docenteId, gradoId;
-    private String nombre, descripcion;
+    private String idCursoBase;
+    private String nombre;
+    private String descripcion;
+    private String idGrado;
 
-    public Curso(int id, String nombre, String descripcion, int docenteId, int gradoId) {
-        this.id = id;
+    private String idCursoDictado;
+    private String idDocente;
+    private String idSeccion;
+    private String idGradoSeccion;
+
+    private String aula;
+    private String horario;
+    private String modalidad;
+    private String color_hex;
+
+    private int numGrado;
+    
+    // REGISTRO - CURSO BASE
+    public Curso(String nombre, String descripcion, String idGrado) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.docenteId = docenteId;
-        this.gradoId = gradoId;
+        this.idGrado = idGrado;
     }
     
-    public Curso(String nombre, String descripcion, int docenteId, int gradoId) {
+    // MOSTRAR CURSO - LISTA CURSOS BASE
+    public Curso(String idCursoBase, String nombre, String descripcion, int numGrado) {
+        this.idCursoBase = idCursoBase;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.docenteId = docenteId;
-        this.gradoId = gradoId;
-    }
+        this.numGrado = numGrado;
+    }   
 
-    public int getId() {
-        return id;
+    // ACTUALIZAR - CURSO DICTADO
+    public Curso(String idCursoDictado, String idDocente, String aula, String horario, String modalidad) {
+        this.idCursoDictado = idCursoDictado;
+        this.idDocente = idDocente;
+        this.aula = aula;
+        this.horario = horario;
+        this.modalidad = modalidad;
+    }
+    
+    // Getters
+    public String getIdCursoBase() {
+        return idCursoBase;
+    }
+    public String getIdCursoDictado() {
+        return idCursoDictado;
+    }
+    public String getIdDocente() {
+        return idDocente;
+    }
+    public String getIdGrado() {
+        return idGrado;
+    }
+    public String getIdSeccion() {
+        return idSeccion;
+    }
+    public String getIdGradoSeccion() {
+        return idGradoSeccion;
     }
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public String getAula() {
+        return aula;
     }
-
-    public int getDocenteId() {
-        return docenteId;
+    public String getHorario() {
+        return horario;
     }
-
-    public void setDocenteId(int docenteId) {
-        this.docenteId = docenteId;
+    public String getModalidad() {
+        return modalidad;
     }
-
-    public int getGradoId() {
-        return gradoId;
+    public String getColor_hex() {
+        return color_hex;
     }
-
-    public void setGradoId(int gradoId) {
-        this.gradoId = gradoId;
+    public int getNumGrado() {
+        return numGrado;
     }
-
 }

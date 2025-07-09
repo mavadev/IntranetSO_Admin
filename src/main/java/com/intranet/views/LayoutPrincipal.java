@@ -3,9 +3,9 @@ package com.intranet.views;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
-public class Layout extends javax.swing.JFrame {
+public class LayoutPrincipal extends javax.swing.JFrame {
 
-    public Layout() {
+    public LayoutPrincipal() {
         initComponents();
         Dashboard dashboardPanel = new Dashboard();
         ShowPanel(dashboardPanel);
@@ -46,7 +46,7 @@ public class Layout extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 732, Short.MAX_VALUE)
         );
 
         sidebar.setBackground(new java.awt.Color(5, 51, 74));
@@ -179,7 +179,7 @@ public class Layout extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Layout().setVisible(true);
+                new LayoutPrincipal().setVisible(true);
             }
         });
     }

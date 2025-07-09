@@ -8,6 +8,8 @@ import com.intranet.controllers.DocenteController;
 import com.intranet.controllers.EstudianteController;
 
 public class AppContext {
+    private static AppContext instance;
+    
     private static DBConnection dbConnection;
     
     private static CursoController cursoController;
@@ -17,6 +19,7 @@ public class AppContext {
     private static AdministradorController administradorController;
 
     public static void initialize() {
+        instance = new AppContext();
         dbConnection = DBConnection.getInstancia();
         
         apoderadoController = new ApoderadoController(dbConnection);
@@ -26,25 +29,24 @@ public class AppContext {
         administradorController = new AdministradorController(dbConnection);
     }
 
+    public static AppContext getInstance() {
+        return instance;
+    }
+    
+    // Getters de Controladores
     public static ApoderadoController getApoderadoController() {
         return apoderadoController;
     }
-    
     public static CursoController getCursoController() {
         return cursoController;
     }
-    
     public static DocenteController getDocenteController() {
         return docenteController;
     }
-
     public static EstudianteController getEstudianteController() {
         return estudianteController;
     }
-
     public static AdministradorController getAdministradorController() {
         return administradorController;
     }
-
-
 }

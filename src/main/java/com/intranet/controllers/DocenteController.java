@@ -8,7 +8,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DocenteController {
@@ -19,51 +18,33 @@ public class DocenteController {
         this.conn = db.getConexion();
     }
 
-    public boolean registerDocente(Docente docente) {
-        int user_id = -1;
-        String queryUser = "INSERT INTO Usuario (email, password, rol) VALUES (?, ?, 'docente');";
+    public boolean registrarDocente(Docente docente) {
+        String queryRegistro = 
+            "EXEC RegistrarDocente "
+            + "@email = ?, "
+            + "@password = ?, "
+            + "@nombres = ?, "
+            + "@apellidos = ?, "
+            + "@fecha_nacimiento = ?, "
+            + "@dni = ?, "
+            + "@celular = ?, "
+            + "@direccion = ?, "
+            + "@especialidad = ?;";
 
-        try (PreparedStatement stmt = conn.prepareStatement(queryUser, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, docente.getEmail());
-            stmt.setString(2, docente.getPassword());
-
-            int filas = stmt.executeUpdate();
-            if (filas > 0) {
-                ResultSet rs = stmt.getGeneratedKeys();
-                if(rs.next()){
-                    user_id = rs.getInt(1);
-                }
-            } else {
-                AlertUtils.showWarning("Credenciales incorrectas");
-                return false;
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al registrar usuario: " + e.getMessage());
-            AlertUtils.showWarning("Hubo un error al insertar el usuario");
-            return false;
-        }
-        
-        if (user_id == -1) {
-            AlertUtils.showWarning("No se obtuvo el ID del usuario insertado.");
-            return false;
-        }
-        System.out.print("USER_ID: "+user_id);
-
-        String queryTeacher2 = "INSERT INTO Docente (usuario_id, nombres, apellidos, fecha_nacimiento, dni, celular, direccion, especialidad ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
-        try (PreparedStatement stmt2 = conn.prepareStatement(queryTeacher2)){
-            stmt2.setInt(1, user_id);
-            stmt2.setString(2, docente.getNombre());
-            stmt2.setString(3, docente.getApellido());
-            stmt2.setDate(4, Date.valueOf(docente.getFecha()));
-            stmt2.setString(5, docente.getDni());
+        try (PreparedStatement stmt2 = conn.prepareStatement(queryRegistro)){
+            stmt2.setString(1, docente.getEmail());
+            stmt2.setString(2, docente.getPassword());
+            stmt2.setString(3, docente.getNombres());
+            stmt2.setString(4, docente.getApellidos());
+            stmt2.setDate(5, Date.valueOf(docente.getFecha()));
             stmt2.setString(6, docente.getDni());
-            stmt2.setString(7, docente.getDireccion());
-            stmt2.setString(8, docente.getEspecialidad());
+            stmt2.setString(7, docente.getCelular());
+            stmt2.setString(8, docente.getDireccion());
+            stmt2.setString(9, docente.getEspecialidad());
 
-            stmt2.executeUpdate();
+            stmt2.executeQuery();
         } catch (Exception e) {
-            System.out.println("Error al insertar docente: " + e.getMessage());
+            System.out.println("Error al insertar el docente: " + e.getMessage());
             AlertUtils.showWarning("Hubo un error al insertar el docente");
             return false;
         }
@@ -73,7 +54,16 @@ public class DocenteController {
     
     public ArrayList<Docente> obtenerDocentes(){
         // Obtenemos los docentes
-        String query = "SELECT * FROM Docente";
+        String query = 
+            "SELECT "
+            + "d.id_docente, "
+            + "d.nombres, "
+            + "d.apellidos, "
+            + "u.email, "
+            + "d.especialidad "
+            + "FROM Docente d "
+            + "JOIN Usuario u ON d.id_usuario = u.id_usuario;";
+        
         ArrayList<Docente> listaDocentes = new ArrayList<Docente>();
 
         try (PreparedStatement sttm = conn.prepareStatement(query)) {
@@ -81,14 +71,11 @@ public class DocenteController {
             
             while (rs.next()) {
                 Docente docente = new Docente(
-                    rs.getInt("id_docente"),
+                    rs.getString("id_docente"),
                     rs.getString("nombres"),
                     rs.getString("apellidos"),
-                    rs.getString("dni"),
-                    rs.getString("celular"),
-                    rs.getString("direccion"),
-                    rs.getString("especialidad"),
-                    rs.getDate("fecha_nacimiento").toLocalDate()
+                    rs.getString("email"),
+                    rs.getString("especialidad")
                 );
                 
                 listaDocentes.add(docente);
@@ -99,5 +86,89 @@ public class DocenteController {
             return null;
         }
         return listaDocentes;
+    }
+        
+    public Docente obtenerDocentePorID(String id_docente){
+        // Obtenemos el docente por ID
+        String query = 
+            "SELECT "
+            + "u.email, "
+            + "d.id_docente, "
+            + "d.nombres, "
+            + "d.apellidos, "
+            + "d.dni, "
+            + "d.celular, "
+            + "d.direccion, "
+            + "d.especialidad "
+            + "FROM Docente d "
+            + "JOIN Usuario u ON d.id_usuario = u.id_usuario "
+            + "WHERE d.id_docente = ?;";
+        
+
+        try (PreparedStatement sttm = conn.prepareStatement(query)) {
+            sttm.setString(1, id_docente);
+            ResultSet rs = sttm.executeQuery();
+            
+            while (rs.next()) {
+                Docente docente = new Docente(
+                    rs.getString("id_docente"),
+                    rs.getString("nombres"),
+                    rs.getString("apellidos"),
+                    rs.getString("email"),
+                    rs.getString("especialidad")
+                );
+                
+                return docente;
+            } 
+        } catch (SQLException e) {
+            System.out.println("Error al obtener el docente: " + e.getMessage());
+            AlertUtils.showWarning("Hubo un error al obtener el docente");
+        }
+        return null;
+    }
+
+    public boolean actualizarDocentePorID(String id_docente, String correo, String hashedPassword){
+        String queryEliminar = 
+            "EXEC ActualizarCredencialesDocente "
+            + "@id_docente = ?, "
+            + "@nuevo_email = ?, "
+            + "@nueva_password = ?;";
+        
+        try (PreparedStatement sttm = conn.prepareStatement(queryEliminar)) {
+            sttm.setString(1, id_docente);
+            sttm.setString(2, correo);
+            sttm.setString(3, hashedPassword);
+
+            ResultSet rs = sttm.executeQuery();
+            
+            if (rs.next()) {
+                AlertUtils.showSuccess("Se actualizo correctamente el docente");
+                return true;
+            } 
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el docente: " + e.getMessage());
+            AlertUtils.showWarning("Hubo un error al actualizar el docente");
+            return false;
+        }
+        return false;
+    }
+
+    public boolean eliminarDocentePorID(String id_docente){
+        String queryEliminar = "EXEC EliminarDocenteConActualizacion @id_docente = ?;";
+        
+        try (PreparedStatement sttm = conn.prepareStatement(queryEliminar)) {
+            sttm.setString(1, id_docente);
+            ResultSet rs = sttm.executeQuery();
+            
+            if (rs.next()) {
+                AlertUtils.showSuccess("Se eliminó correctamente el docente");
+                return true;
+            } 
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar el docente: " + e.getMessage());
+            AlertUtils.showWarning("Hubo un error al eliminar el docente");
+            return false;
+        }
+        return false;
     }
 }

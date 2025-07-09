@@ -1,49 +1,42 @@
 package com.intranet.models;
 
 public class Apoderado{
-    private int id;
-    private String nombre, apellido, celular, dni;
+    private String idApoderado;
+    private String nombres;
+    private String apellidos;
+    private String celular;
+    private String dni;
 
-    public Apoderado(String nombre, String apellido, String celular, String dni) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+    // REGISTRO DE APODERADO
+    public Apoderado(String nombres, String apellidos, String celular, String dni) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.celular = celular;
         this.dni = dni;
     }
     
-    public Apoderado(int id, String nombre, String apellido, String celular, String dni) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
+    // DATOS DE APODERADO
+    public Apoderado(String idApoderado, String nombres, String apellidos, String celular, String dni) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.celular = celular;
         this.dni = dni;
     }
 
-    public int getId() {
-        return id;
+    // Getters
+    public String getIdApoderado() {
+        return idApoderado;
     }
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getApellido() {
-        return apellido;
-    }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public String getApellidos() {
+        return apellidos;
     }
     public String getCelular() {
         return celular;
     }
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
     public String getDni() {
         return dni;
-    }
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 }

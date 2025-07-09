@@ -14,4 +14,16 @@ public class Format {
             return null;
         }
     }
+    
+    public static String numGradoToStrGrado(int num_grado){
+        switch(num_grado){
+            case 1: return "1er Grado";
+            case 2: return "2do Grado";
+            case 3: return "3er Grado";
+            case 4: return "4to Grado";
+            case 5: return "5to Grado";
+            case 6: return "6to Grado";
+            default: return num_grado+"° Grado";
+        }
+    }
 }

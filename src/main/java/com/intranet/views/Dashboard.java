@@ -15,13 +15,13 @@ public class Dashboard extends javax.swing.JPanel {
     
     private void obtenerDatosDashboard(){
         // Obtenemos los cursos de la DB
-        ArrayList<Curso> cursos = AppContext.getCursoController().obtenerCursos();
+        ArrayList<Curso> cursos = AppContext.getCursoController().obtenerCursosPorGrado("");
         
         // Obtenemos los docentes de la DB
         ArrayList<Docente> docentes = AppContext.getDocenteController().obtenerDocentes();
 
         // Obtenemos los grados de la DB
-        ArrayList<Estudiante> estudiantes = AppContext.getEstudianteController().obtenerEstudiantes();
+        ArrayList<Estudiante> estudiantes = AppContext.getEstudianteController().obtenerEstudiantesPorGrado("");
 
         // Seteamos los valores a los labels
         txtCantCursos.setText(cursos.size()+ " curso(s)");

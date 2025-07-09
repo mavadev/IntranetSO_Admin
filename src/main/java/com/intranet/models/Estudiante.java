@@ -1,104 +1,111 @@
 package com.intranet.models;
 import java.time.LocalDate;
 
-public class Estudiante extends Usuario {
-    
-    //Estudiante
-    private int id, grado, seccion;
-    private String nombre,apellido, dni, direccion;
+public class Estudiante extends Usuario {    
+    private String idEstudiante;
+    private String idUsuario;
+    private String idApoderado;
+    private String idGradoSeccion;
+
+    private String nombres;
+    private String apellidos;
     private LocalDate fechaNacimiento;
+    private String dni;
+    private String direccion;
 
-    public Estudiante(int id, String nombre, String apellido, LocalDate fechaNacimiento, String dni, String direccion, int grado, int seccion ) {
-        this.id = id;
-        this.grado = grado;
-        this.seccion = seccion;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.direccion = direccion;
-        this.fechaNacimiento = fechaNacimiento;
-    }
-    
-    public Estudiante(String nombre, String apellido, LocalDate fechaNacimiento, String dni, String direccion, int grado, int seccion ) {
-        this.grado = grado;
-        this.seccion = seccion;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.direccion = direccion;
-        this.fechaNacimiento = fechaNacimiento;
-    }
+    private int numeroGrado;
+    private String letraSeccion;
 
-    public Estudiante(String correo, String contraseña, String nombre, String apellido, LocalDate fechaNacimiento, String dni, String direccion, int grado, int seccion) {
+    // REGISTRAR ESTUDIANTE
+    public Estudiante(
+        String correo, 
+        String contraseña, 
+        String nombres, 
+        String apellidos, 
+        LocalDate fechaNacimiento, 
+        String dni, 
+        String direccion            
+    ) {
         super(correo, contraseña, "estudiante", "activo");
-        this.grado = grado;
-        this.seccion = seccion;
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
         this.dni = dni;
         this.direccion = direccion;
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public int getId(){
-        return id;
     }
     
-    public int getGrado() {
-        return grado;
-    }
-
-    public void setGrado(int grado) {
-        this.grado = grado;
-    }
-
-    public int getSeccion() {
-        return seccion;
-    }
-
-    public void setSeccion(int seccion) {
-        this.seccion = seccion;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
+    // MOSTRAR ESTUDIANTE COMPLETO
+    public Estudiante(
+        String correo,
+        String idEstudiante,
+        String nombres, 
+        String apellidos, 
+        String dni, 
+        String direccion,
+        int numGrado
+    ) {
+        super(correo);
+        this.idEstudiante = idEstudiante;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.dni = dni;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
         this.direccion = direccion;
+        this.numeroGrado = numGrado;
+    }
+    
+    // MOSTRAR ESTUDIANTE - LISTADO
+    public Estudiante(
+        String idEstudiante,
+            
+        String nombres, 
+        String apellidos, 
+        String email,
+        
+        int numGrado,
+        String letraSeccion
+    ) {
+        super(email);
+        this.idEstudiante = idEstudiante;
+        
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        
+        this.numeroGrado = numGrado;
+        this.letraSeccion = letraSeccion;
     }
 
+    // Getters
+    public String getIdEstudiante() {
+        return idEstudiante;
+    }
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+    public String getIdApoderado() {
+        return idApoderado;
+    }
+    public String getIdGradoSeccion() {
+        return idGradoSeccion;
+    }
+    public String getNombres() {
+        return nombres;
+    }
+    public String getApellidos() {
+        return apellidos;
+    }
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
-
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public String getDni() {
+        return dni;
     }
-    
-    
+    public String getDireccion() {
+        return direccion;
+    }
+    public int getNumeroGrado() {
+        return numeroGrado;
+    }
+    public String getLetraSeccion() {
+        return letraSeccion;
+    }
 }

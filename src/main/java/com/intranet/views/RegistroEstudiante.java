@@ -1,11 +1,15 @@
 package com.intranet.views;
 
 import com.intranet.app.AppContext;
-import com.intranet.models.Apoderado;
-import com.intranet.models.Estudiante;
 import com.intranet.utils.AlertUtils;
 import com.intranet.utils.Format;
+import com.intranet.utils.OpcionCombo;
+import com.intranet.utils.PasswordUtils;
 import com.intranet.utils.Validador;
+
+import com.intranet.models.Apoderado;
+import com.intranet.models.Estudiante;
+
 import java.time.LocalDate;
 
 public class RegistroEstudiante extends javax.swing.JPanel {
@@ -17,12 +21,18 @@ public class RegistroEstudiante extends javax.swing.JPanel {
 
     public void setearGradosSecciones(){
         // Setear los grados
-        String[] grados = {"Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto"};
-        cBoxGrado.setModel(new javax.swing.DefaultComboBoxModel<>(grados));
-        
+        cBoxGrado.addItem(new OpcionCombo("G0001", "1er Grado"));
+        cBoxGrado.addItem(new OpcionCombo("G0002", "2do Grado"));
+        cBoxGrado.addItem(new OpcionCombo("G0003", "3er Grado"));
+        cBoxGrado.addItem(new OpcionCombo("G0004", "4er Grado"));
+        cBoxGrado.addItem(new OpcionCombo("G0005", "5do Grado"));
+        cBoxGrado.addItem(new OpcionCombo("G0006", "6er Grado"));
+
         // Setear los grados
-        String[] secciones = {"A", "B", "C", "D"};
-        cBoxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(secciones));
+        cBoxSeccion.addItem(new OpcionCombo("S0001", "A"));
+        cBoxSeccion.addItem(new OpcionCombo("S0002", "B"));
+        cBoxSeccion.addItem(new OpcionCombo("S0003", "C"));
+        cBoxSeccion.addItem(new OpcionCombo("S0004", "D"));
     }
     
     @SuppressWarnings("unchecked")
@@ -30,7 +40,6 @@ public class RegistroEstudiante extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtFecha = new javax.swing.JTextField();
@@ -41,8 +50,8 @@ public class RegistroEstudiante extends javax.swing.JPanel {
         txtCorreo = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
-        cBoxGrado = new javax.swing.JComboBox<>();
-        cBoxSeccion = new javax.swing.JComboBox<>();
+        cBoxGrado = new javax.swing.JComboBox();
+        cBoxSeccion = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -62,10 +71,6 @@ public class RegistroEstudiante extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel1.setText("REGISTRO DE ESTUDANTES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 269, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos del estudiante", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -91,10 +96,10 @@ public class RegistroEstudiante extends javax.swing.JPanel {
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
         jPanel3.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 360, 30));
 
-        cBoxGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Seleccione una opción---", "1", "2", "3" }));
+        cBoxGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "---Seleccione una opción---", "1", "2", "3" }));
         jPanel3.add(cBoxGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 130, 30));
 
-        cBoxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Seleccione una opción---", "1", "2", "3" }));
+        cBoxSeccion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "---Seleccione una opción---", "1", "2", "3" }));
         jPanel3.add(cBoxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 130, 30));
 
         jLabel9.setText("Seccion");
@@ -108,7 +113,7 @@ public class RegistroEstudiante extends javax.swing.JPanel {
         jLabel3.setText("Nro DNI:");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 290));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 290));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos del apoderado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -131,7 +136,7 @@ public class RegistroEstudiante extends javax.swing.JPanel {
         jLabel4.setText("Apellidos");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 740, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 740, -1));
 
         btnRegistrarEstudiante.setBackground(new java.awt.Color(180, 0, 35));
         btnRegistrarEstudiante.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -144,7 +149,7 @@ public class RegistroEstudiante extends javax.swing.JPanel {
                 btnRegistrarEstudianteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 280, 49));
+        jPanel1.add(btnRegistrarEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 740, 49));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -170,47 +175,63 @@ public class RegistroEstudiante extends javax.swing.JPanel {
         String dniApoderado = txtDNIApoderado.getText();
 
         // Validar valores de apoderado
-        if (nombreApoderado.isEmpty() || apellidoApoderado.isEmpty() || celularApoderado.isEmpty() || dniApoderado.isEmpty()) {
-            AlertUtils.showWarning("Todos los campos del apoderado son obligatorios");
+        if (nombreApoderado.isEmpty() || apellidoApoderado.isEmpty() || 
+            celularApoderado.isEmpty() || dniApoderado.isEmpty()
+        ) {
+            AlertUtils.showWarning("Todos los campos del Apoderado son obligatorios");
             return;
         }
 
-        // Registrar Apoderado
-        Apoderado apoderado = AppContext.getApoderadoController().registerApoderado(new Apoderado(nombreApoderado, apellidoApoderado, celularApoderado, dniApoderado));
+        // Creamos el apoderado
+        Apoderado apoderado = new Apoderado(nombreApoderado, apellidoApoderado, celularApoderado, dniApoderado);
         
         // Obtener datos de Estudiante
         String correoEstudiante = txtCorreo.getText();
-
         String nombreEstudiante = txtNombre.getText();
         String apellidoEstudiante = txtApellido.getText();
         String fechaStr = txtFecha.getText();
-        String dniEstudiante = txtDNI.getText();
-        String direccion = txtDireccion.getText();
-        int grado_id = cBoxGrado.getSelectedIndex()+1;
-        int seccion_id = cBoxSeccion.getSelectedIndex()+1;
+        String DNIEstudiante = txtDNI.getText();
+        String direccionEstudiante = txtDireccion.getText();
+        
+        // Obtenemos el grado y seccion (IDS)
+        OpcionCombo gradoSeleccionado = (OpcionCombo) cBoxGrado.getSelectedItem();
+        OpcionCombo seccionSeleccinado = (OpcionCombo) cBoxSeccion.getSelectedItem();
+        
+        String id_grado = gradoSeleccionado.getId();
+        String id_seccion = seccionSeleccinado.getId();
 
         // Validacion de campos generales
-        if (correoEstudiante.isEmpty() || nombreEstudiante.isEmpty() || apellidoEstudiante.isEmpty() || fechaStr.isEmpty() ||  dniEstudiante.isEmpty() ||
-            direccion.isEmpty() ||  grado_id == 0 || seccion_id == 0) {
-            AlertUtils.showWarning("Todos los campos son obligatorios");
+        if (correoEstudiante.isEmpty() || nombreEstudiante.isEmpty() || 
+            apellidoEstudiante.isEmpty() || fechaStr.isEmpty() ||  
+            DNIEstudiante.isEmpty() || direccionEstudiante.isEmpty()) {
+            AlertUtils.showWarning("Todos los campos del Estudiante son obligatorios");
             return;
         }
         
-        // Validación de campos individuales
+        // Validación de Correo
         String resultadoCorreo = Validador.esCorreoValido(correoEstudiante);
         if (!resultadoCorreo.equals("OK")) {
             AlertUtils.showWarning(resultadoCorreo);
             return;
         }
         
-        // Parseo de string a fecha
-        LocalDate fecha = Format.stringToLocalDate(fechaStr);
-
-        // Registrar Estudiante
-        String contraseña = dniEstudiante;
-        Estudiante estudiante = new Estudiante(correoEstudiante, contraseña, nombreEstudiante, apellidoEstudiante, fecha, dniEstudiante, direccion, grado_id, seccion_id);
+        // Convertimos datos
+        LocalDate fechaEstudiante = Format.stringToLocalDate(fechaStr);
+        String contraseñaEstudiante = PasswordUtils.hashPassword(DNIEstudiante);
         
-        boolean result = AppContext.getEstudianteController().registerStudent(estudiante, apoderado.getId());
+        // Creamos el estudiante con su datos
+        Estudiante estudiante = new Estudiante(
+            correoEstudiante, 
+            contraseñaEstudiante, 
+            nombreEstudiante, 
+            apellidoEstudiante, 
+            fechaEstudiante, 
+            DNIEstudiante, 
+            direccionEstudiante
+        );
+        
+        boolean result = 
+            AppContext.getEstudianteController().registrarEstudiante(apoderado, estudiante, id_grado, id_seccion);
         
         if(result){
             AlertUtils.showSuccess("¡Estudiante registrado correctamente!");
@@ -237,9 +258,8 @@ public class RegistroEstudiante extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarEstudiante;
-    private javax.swing.JComboBox<String> cBoxGrado;
-    private javax.swing.JComboBox<String> cBoxSeccion;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox cBoxGrado;
+    private javax.swing.JComboBox cBoxSeccion;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;

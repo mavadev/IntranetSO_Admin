@@ -31,12 +31,11 @@ public class RegistroDocente extends javax.swing.JPanel {
         txtCelular = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtEspecialidad = new javax.swing.JTextField();
-        btnRegistrarDocente = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnRegistrarDocente = new javax.swing.JButton();
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 720));
 
@@ -69,6 +68,14 @@ public class RegistroDocente extends javax.swing.JPanel {
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
         jPanel3.add(txtEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 390, -1));
 
+        jLabel7.setText("Apellidos");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        jPanel3.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 160, -1));
+        jPanel3.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 160, -1));
+
+        jLabel12.setText("Direccion");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
+
         btnRegistrarDocente.setBackground(new java.awt.Color(180, 0, 35));
         btnRegistrarDocente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnRegistrarDocente.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,38 +87,26 @@ public class RegistroDocente extends javax.swing.JPanel {
                 btnRegistrarDocenteActionPerformed(evt);
             }
         });
-        jPanel3.add(btnRegistrarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 280, 49));
-
-        jLabel7.setText("Apellidos");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
-        jPanel3.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 160, -1));
-        jPanel3.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 160, -1));
-
-        jLabel12.setText("Direccion");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel2.setText("REGISTRO DE DOCENTES");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(329, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarDocente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(335, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2)
-                .addGap(51, 51, 51)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnRegistrarDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -162,7 +157,7 @@ public class RegistroDocente extends javax.swing.JPanel {
         Docente docente = new Docente(correo, dni, nombre, apellido, dni, celular, direccion, especialidad, fecha);
 
         // Obtener resultado al registrar el docente
-        boolean result = AppContext.getDocenteController().registerDocente(docente);
+        boolean result = AppContext.getDocenteController().registrarDocente(docente);
 
         // En caso no se registre correctamente
         if(result){
@@ -190,7 +185,6 @@ public class RegistroDocente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

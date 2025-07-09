@@ -36,7 +36,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login - Sistema de Administración");
 
-        background8.setLayout(new java.awt.GridLayout(1, 0));
+        background8.setLayout(new java.awt.GridLayout());
 
         title8.setLayout(new java.awt.BorderLayout(0, 10));
 
@@ -96,7 +96,7 @@ public class Login extends javax.swing.JFrame {
         form8Layout.setHorizontalGroup(
             form8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, form8Layout.createSequentialGroup()
-                .addContainerGap(229, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(form8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(title8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,7 +143,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background8, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+            .addComponent(background8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(1296, 741));
@@ -180,7 +180,7 @@ public class Login extends javax.swing.JFrame {
         if(admin != null){
             AlertUtils.showSuccess("Bienvenido "+admin.getNombre()+"!");
 
-            new Layout().setVisible(true);
+            new LayoutPrincipal().setVisible(true);
             this.setVisible(false);
         }
         else {

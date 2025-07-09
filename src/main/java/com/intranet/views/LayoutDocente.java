@@ -29,6 +29,7 @@ public class LayoutDocente extends javax.swing.JPanel {
         btnCrearDocente = new javax.swing.JButton();
         btnListarDocentes = new javax.swing.JButton();
         contentCurso = new javax.swing.JPanel();
+        txtTitleDocente = new javax.swing.JLabel();
 
         btnCrearDocente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCrearDocente.setText("Crear Docente");
@@ -57,18 +58,23 @@ public class LayoutDocente extends javax.swing.JPanel {
             .addGap(0, 625, Short.MAX_VALUE)
         );
 
+        txtTitleDocente.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtTitleDocente.setText("Registrar Docente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contentCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtTitleDocente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCrearDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnListarDocentes, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnListarDocentes, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(contentCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -77,7 +83,8 @@ public class LayoutDocente extends javax.swing.JPanel {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrearDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnListarDocentes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnListarDocentes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTitleDocente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(contentCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -87,11 +94,15 @@ public class LayoutDocente extends javax.swing.JPanel {
     private void btnCrearDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDocenteActionPerformed
         RegistroDocente registroPanel = new RegistroDocente();
         ShowPanel(registroPanel);
+        
+        txtTitleDocente.setText("Lista de Docentes");
     }//GEN-LAST:event_btnCrearDocenteActionPerformed
 
     private void btnListarDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDocentesActionPerformed
         ListaDocentes listaPanel = new ListaDocentes();
         ShowPanel(listaPanel);
+        
+        txtTitleDocente.setText("Registrar Docente");
     }//GEN-LAST:event_btnListarDocentesActionPerformed
 
 
@@ -99,5 +110,6 @@ public class LayoutDocente extends javax.swing.JPanel {
     private javax.swing.JButton btnCrearDocente;
     private javax.swing.JButton btnListarDocentes;
     private javax.swing.JPanel contentCurso;
+    private javax.swing.JLabel txtTitleDocente;
     // End of variables declaration//GEN-END:variables
 }

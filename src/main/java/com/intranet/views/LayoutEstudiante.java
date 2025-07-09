@@ -29,6 +29,7 @@ public class LayoutEstudiante extends javax.swing.JPanel {
         btnCrearEstudiante = new javax.swing.JButton();
         btnListarEstudiantes = new javax.swing.JButton();
         contentCurso = new javax.swing.JPanel();
+        txtTittleEstudiante = new javax.swing.JLabel();
 
         btnCrearEstudiante.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCrearEstudiante.setText("Crear Estudiante");
@@ -54,8 +55,11 @@ public class LayoutEstudiante extends javax.swing.JPanel {
         );
         contentCursoLayout.setVerticalGroup(
             contentCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGap(0, 591, Short.MAX_VALUE)
         );
+
+        txtTittleEstudiante.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtTittleEstudiante.setText("Registrar Estudiante");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -63,9 +67,11 @@ public class LayoutEstudiante extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(contentCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtTittleEstudiante)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCrearEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnListarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -74,24 +80,29 @@ public class LayoutEstudiante extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCrearEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnListarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCrearEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnListarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTittleEstudiante))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(contentCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(21, 21, 21))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearEstudianteActionPerformed
         RegistroEstudiante registroPanel = new RegistroEstudiante();
         ShowPanel(registroPanel);
+        txtTittleEstudiante.setText("Lista de Estudiantes");
     }//GEN-LAST:event_btnCrearEstudianteActionPerformed
 
     private void btnListarEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarEstudiantesActionPerformed
         ListaEstudiantes listaPanel = new ListaEstudiantes();
         ShowPanel(listaPanel);
+       
+        txtTittleEstudiante.setText("Registrar Estudiante");
     }//GEN-LAST:event_btnListarEstudiantesActionPerformed
 
 
@@ -99,5 +110,6 @@ public class LayoutEstudiante extends javax.swing.JPanel {
     private javax.swing.JButton btnCrearEstudiante;
     private javax.swing.JButton btnListarEstudiantes;
     private javax.swing.JPanel contentCurso;
+    private javax.swing.JLabel txtTittleEstudiante;
     // End of variables declaration//GEN-END:variables
 }

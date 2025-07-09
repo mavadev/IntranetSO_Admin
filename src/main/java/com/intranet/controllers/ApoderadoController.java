@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ApoderadoController {
     private final Connection conn;
@@ -16,34 +15,26 @@ public class ApoderadoController {
         this.conn = db.getConexion();
     }
     
-    public Apoderado registerApoderado(Apoderado apoderado) {
-        String queryUser = "INSERT INTO Apoderado (nombres, apellidos, celular, dni) VALUES (?, ?, ?, ?)";
-
-        try (PreparedStatement stmt = conn.prepareStatement(queryUser, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, apoderado.getNombre());
-            stmt.setString(2, apoderado.getApellido());
-            stmt.setString(3, apoderado.getCelular());
-            stmt.setString(4, apoderado.getDni());
-
-            int filas = stmt.executeUpdate();
-            if (filas > 0) {
-                ResultSet rs = stmt.getGeneratedKeys();
-                 if (rs.next()) {
-                    return new Apoderado(
-                        rs.getInt(1),
-                        apoderado.getNombre(),
-                        apoderado.getApellido(),
-                        apoderado.getCelular(),
-                        apoderado.getDni()
-                    );
-                }
-            } else {
-                AlertUtils.showWarning("Credenciales incorrectas");
-                return null;
-            }
+    public Apoderado buscarPorDni(String dniApoderado) {
+        // Obtenemos el apoderado por DNI
+        String query = "SELECT * FROM Apoderado WHERE id_apoderado = " + dniApoderado;
+        
+        try (PreparedStatement sttm = conn.prepareStatement(query)) {
+            ResultSet rs = sttm.executeQuery();
+            
+            if (rs.next()) {
+                Apoderado apoderado = new Apoderado(
+                    rs.getString("id_apoderado"),
+                    rs.getString("nombres"),
+                    rs.getString("apellidos"),
+                    rs.getString("celular"),
+                    rs.getString("dni")
+                );
+                return apoderado;
+            } 
         } catch (SQLException e) {
-            System.out.println("Error al registrar apoderado: " + e.getMessage());
-            AlertUtils.showWarning("Hubo un error al insertar el apoderado");
+            System.out.println("Error al obtener el apoderado por DNI: " + e.getMessage());
+            AlertUtils.showWarning("Hubo un error al obtener el apoderado por DNI");
             return null;
         }
         return null;
